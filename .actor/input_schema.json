@@ -4,9 +4,9 @@
     "schemaVersion": 1,
     "properties": {
         "url": {
-            "title": "URL of the page",
+            "title": "URLs used for lyrics generation.",
             "type": "string",
-            "description": "The URL of website you want to get the data from.",
+            "description": "URL of the page that will be used to generate lyrics for the song.",
             "editor": "textfield",
             "prefill": "https://www.apify.com/"
         },
