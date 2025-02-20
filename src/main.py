@@ -9,21 +9,26 @@ from src.lyrics_generation import generate_lyrics
 
 async def main() -> None:
     async with Actor:
-        # Read inputs
         actor_input = await Actor.get_input()
+        kvs = await Actor.open_key_value_store()
+
+        # Fetch page content.
         url = actor_input.get("url")
         if not url:
             raise ValueError('Missing "url" attribute in input!')
-
-        # Fetch content.
-        content = await fetch_content(url)
+        await Actor.set_status_message('Fetching page content')
+        Actor.log.info("Fetching page content", extra={"url": url})
+        page_content = await fetch_content(url)
 
         # Generate song lyrics.
-        Actor.log.info("Generating the song lyrics")
-        lyrics = await generate_lyrics(content)
-        Actor.log.info("Generated lyrics", extra={"lyrics": lyrics})
+        await Actor.set_status_message('Generating lyrics using AI')
+        Actor.log.info("Fetching page content using AI", extra={"page_content": page_content})
+        lyrics = await generate_lyrics(page_content)
+        await kvs.set_value(key="lyrics", value=lyrics, content_type="plain/text")
 
         # Generate song.
+        await Actor.set_status_message('Generating the song (this might take a few minutes)')
+        Actor.log.info("Generating the song", extra={"lyrics": lyrics})
         topmediai_api_key = actor_input.get("topmediai_api_key") or os.environ.get(
             "TOPMEDIAI_API_KEY"
         )
@@ -34,10 +39,7 @@ async def main() -> None:
             genre=actor_input.get("song_genre"),
             logger=Actor.log,
         )
-        kvs = await Actor.open_key_value_store()
-        await kvs.set_value(
-            key="song", value=get_song(song_link), content_type="audio/mpeg"
-        )
+        await kvs.set_value(key="song", value=get_song(song_link), content_type="audio/mpeg")
 
         # Charge user based on the resources used
         if actor_input.get("topmediai_api_key"):
