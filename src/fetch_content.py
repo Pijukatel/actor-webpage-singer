@@ -6,7 +6,8 @@ async def fetch_content(url):
         actor_id="apify/website-content-crawler",
         run_input={
             "startUrls": [{"url": url}],
-            "maxCrawlPages": 1
+            "maxCrawlPages": 1,
+            "crawlerType": "playwright:chrome",
         })
 
     if run is None or run.status != 'SUCCEEDED':
