@@ -7,7 +7,7 @@ async def fetch_content(url):
         run_input={
             "startUrls": [{"url": url}],
             "maxCrawlPages": 1,
-            "crawlerType": "playwright:chrome",
+            "crawlerType": "playwright:firefox",
         })
 
     if run is None or run.status != 'SUCCEEDED':

@@ -9,7 +9,7 @@ from src.lyrics_generation import generate_lyrics
 async def main() -> None:
     async with Actor:
         # Read inputs
-        actor_input = await Actor.get_input() or {'url': 'https://www.novinky.cz/clanek/krimi-ukradl-znamemu-igelitku-s-miliony-a-zmizel-na-opacny-konec-sveta-po-dvanacti-letech-pujde-do-vezeni-40509696'}
+        actor_input = await Actor.get_input()
         url = actor_input.get('url')
         if not url:
             raise ValueError('Missing "url" attribute in input!')
