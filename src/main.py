@@ -23,6 +23,11 @@ async def main() -> None:
         print(lyrics)
 
         # Generate song.
+        charge_result = await Actor.charge(
+            event_name='foobar',
+            count=4,
+        )
+
         api_key = actor_input.get('topmediai_api_key') or os.environ.get("TOPMEDIAI_API_KEY")
         song_link = generate_song(lyrics=lyrics, api_key=api_key, genre=actor_input.get('song_genre'), logger=Actor.log)
         kvs = await Actor.open_key_value_store()

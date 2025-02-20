@@ -15,7 +15,7 @@
             "type": "string",
             "isSecret": true,
             "description": "API key for https://www.topmediai.com/",
-            "editor": "textfield",
+            "editor": "textfield"
         },
         "song_genre": {
             "title": "Song genre used to generate the song",
