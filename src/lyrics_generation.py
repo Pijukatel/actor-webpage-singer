@@ -1,6 +1,4 @@
-import os
-
-from openai import OpenAI
+from src.open_ai_client import get_open_api_client
 
 SYSTEM_PROMPT = """
 You are a helpful, analytical assistant that can summarize text. You try to be non-biased and sticking to facts.
@@ -18,12 +16,8 @@ Summarize the following text into a song-like structure.
  - Don't print headlines like "Verse 1".
 """
 
-def generate_lyrics(content):
-    client = OpenAI(
-        api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
-    )
-
-    result = chat_completion = client.chat.completions.create(
+async def generate_lyrics(content):
+    chat_completion = await get_open_api_client().chat.completions.create(
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"{USER_PROMPT}\n\n```{content}```"}
@@ -31,4 +25,4 @@ def generate_lyrics(content):
         model="gpt-4o",
     )
 
-    return result.choices[0].message.content
+    return chat_completion.choices[0].message.content

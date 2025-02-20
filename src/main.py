@@ -19,8 +19,8 @@ async def main() -> None:
 
         # Generate song lyrics.
         Actor.log.info("Generating the song lyrics")
-        lyrics = generate_lyrics(content)
-        print(lyrics)
+        lyrics = await generate_lyrics(content)
+        Actor.log.info("Generated lyrics", extra={"lyrics": lyrics })
 
         # Actor charge based on which key is used
         user_api_key = actor_input.get('topmediai_api_key')
