@@ -24,5 +24,5 @@ async def main() -> None:
         api_key = actor_input.get('topmediai_api_key')
         Actor.log.info(f"Generating song using: {api_key}")
         song_link = generate_song(lyrics=lyrics, api_key=api_key, genre=actor_input.get('song_genre'), logger=Actor.log)
-        kvs = await Actor.open_key_value_store()
-        await kvs.set_value(key="generated_song", value=song_link)
+        dataset = await Actor.open_dataset()
+        await dataset.push({"url": song_link})
