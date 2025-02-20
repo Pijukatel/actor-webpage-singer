@@ -1,0 +1,26 @@
+{
+  "actorSpecification": 1,
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": {
+            "label": "url",
+            "format": "link"
+          },
+          "lyrics": {
+            "label": "lyrics",
+            "format": "text"
+          }
+        }
+      }
+    }
+  }
+}

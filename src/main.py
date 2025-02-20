@@ -16,18 +16,22 @@ async def main() -> None:
         url = actor_input.get("url")
         if not url:
             raise ValueError('Missing "url" attribute in input!')
-        await Actor.set_status_message('Fetching page content')
+        await Actor.set_status_message("Fetching page content")
         Actor.log.info("Fetching page content", extra={"url": url})
         page_content = await fetch_content(url)
 
         # Generate song lyrics.
-        await Actor.set_status_message('Generating lyrics using AI')
-        Actor.log.info("Fetching page content using AI", extra={"page_content": page_content})
+        await Actor.set_status_message("Generating lyrics using AI")
+        Actor.log.info(
+            "Fetching page content using AI", extra={"page_content": page_content}
+        )
         lyrics = await generate_lyrics(page_content)
         await kvs.set_value(key="lyrics", value=lyrics, content_type="plain/text")
 
         # Generate song.
-        await Actor.set_status_message('Generating the song (this might take a few minutes)')
+        await Actor.set_status_message(
+            "Generating the song (this might take a few minutes)"
+        )
         Actor.log.info("Generating the song", extra={"lyrics": lyrics})
         topmediai_api_key = actor_input.get("topmediai_api_key") or os.environ.get(
             "TOPMEDIAI_API_KEY"
@@ -39,10 +43,16 @@ async def main() -> None:
             genre=actor_input.get("song_genre"),
             logger=Actor.log,
         )
-        await kvs.set_value(key="song", value=get_song(song_link), content_type="audio/mpeg")
+        await kvs.set_value(
+            key="song", value=get_song(song_link), content_type="audio/mpeg"
+        )
 
         # Charge user based on the resources used
         if actor_input.get("topmediai_api_key"):
             await Actor.charge(event_name="song_with_user_api_key", count=1)
         else:
             await Actor.charge(event_name="song_with_actor_api_key", count=1)
+
+        # Alternative visualisation
+        dataset = await Actor.open_dataset()
+        await dataset.push_data({"url": song_link, "lyrics": lyrics})
