@@ -15,6 +15,8 @@ def generate_song(lyrics: str, api_key: str, genre: str= "Hip Hop") -> str:
     }
 
     response = requests.request("POST", api_url, json=payload, headers=headers)
+    if response.status_code != 200:
+        raise Exception(response.text)
 
     songs = json.loads(response.text)["data"]
 

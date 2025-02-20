@@ -59,7 +59,8 @@ Tam přemluvil kamarádku ke společné dovolené na Novém Zélandu a druhý de
         print(lyrics)
 
         # Generate song.
-
-        song_link = generate_song(lyrics=content, api_key = actor_input.get('topmediai_api_key'), genre= "Hip Hop")
+        api_key = actor_input.get('topmediai_api_key')
+        Actor.log.info(f"Generating song using: {api_key}")
+        song_link = generate_song(lyrics=content, api_key = api_key, genre= "Hip Hop")
         kvs = await Actor.open_key_value_store()
         kvs.set_value(key="generated_song", value=song_link)
