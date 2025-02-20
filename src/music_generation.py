@@ -4,9 +4,7 @@ import requests
 import json
 
 
-logger = getLogger(__name__)
-
-def generate_song(lyrics: str, api_key: str, genre: str= "Hip Hop") -> str:
+def generate_song(lyrics: str, api_key: str, genre: str= "Hip Hop", logger=getLogger(__name__)) -> str:
     """Generate song and return generated music link"""
     api_url = "https://api.topmediai.com/v1/music"
 
