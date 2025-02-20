@@ -13,3 +13,7 @@ This Actor scrapes content of a URL your provide, uses LLM to turn it into lyric
 You are charged per song generated. You can provide your own TopMedia AI API token to reduce the costs.
 
 Note: We're currently running on a limited TopMediai plan, so having the Actor cover the costs of song generation is not guaranteed.
+
+## Open Source
+
+This Actor is open source, hosted on [GitHub](https://github.com/Pijukatel/actor-text-summary-song).
