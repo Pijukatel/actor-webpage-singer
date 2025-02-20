@@ -20,7 +20,7 @@
         "song_genre": {
             "title": "Song genre",
             "type": "string",
-            "description": "Song genre used to generate the song",
+            "description": "Song genre used to generate the song. If not provided, the AI will suggest one based on the page content.",
             "editor": "textfield",
             "prefill": "Hip Hop"
         }
