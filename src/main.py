@@ -2,6 +2,21 @@ import os
 from apify import Actor
 from openai import OpenAI
 
+from src.lyrics_generation import generate_lyrics
+
+SYSTEM_PROMPT = """
+You are a helpful, analytical assistant that can summarize text. You try to be non-biased and sticking to facts.
+"""
+
+USER_PROMPT = """
+Summarize the following text into a song-like structure.
+
+ - It should consist of several verses, each around 30 words.
+ - They don't have to rhyme but should be of the same length.
+ - Stay factual, keeping the original content.
+ - Stick to the original language.
+"""
+
 async def main() -> None:
     async with Actor:
         # Read inputs
@@ -35,20 +50,10 @@ Ondráček 5. ledna 2012 využil toho, že jeho známý nedával chvíli pozor, 
 Tam přemluvil kamarádku ke společné dovolené na Novém Zélandu a druhý den skutečně odletěli. Dívka se pak vrátila sama poté, co jí rodiče napsali, že Ondráčka hledá policie. Jeho advokátka pak u prvního soudního jednání tvrdila, že rychle zmizel z Česka nikoliv ze strachu z policie, ale ze známého, jenž ho údajně zatahoval do mafiánských praktik.
 """
 
-        client = OpenAI(
-            api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
-        )
-
-        result = chat_completion = client.chat.completions.create(
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant that summarizes text."},
-                {"role": "user", "content": f"Summarize the following text:\n\n{content}"}
-            ],
-            model="gpt-4o",
-        )
-
-        print(result.choices[0].message.content)
-
+        # Generate song lyrics
+        Actor.log.info("Generating the song lyrics")
+        lyrics = generate_lyrics(content)
+        print(lyrics)
 
         # Generate song.
 
