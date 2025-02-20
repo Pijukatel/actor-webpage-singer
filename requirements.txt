@@ -4,3 +4,4 @@
 apify < 3.0
 openai == 1.63.*
 requests
+pydantic

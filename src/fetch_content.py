@@ -1,13 +1,16 @@
 from apify import Actor
 
-async def fetch_content(url):
-    Actor.log.info("Fetching content", extra={"url": url})
+async def fetch_pages(urls):
+    Actor.log.info("Fetching pages", extra={"urls": urls})
+
+    start_urls = [{"url": url} for url in urls]
+
     run = await Actor.call(
         actor_id="apify/website-content-crawler",
         run_input={
-            "startUrls": [{"url": url}],
-            "maxCrawlPages": 1,
-            "crawlerType": "playwright:firefox",
+            "startUrls": start_urls,
+            "maxCrawlPages": len(start_urls),
+            "crawlerType": "playwright:adaptive",
         })
 
     if run is None or run.status != 'SUCCEEDED':
@@ -18,4 +21,9 @@ async def fetch_content(url):
     if not page.items:
         raise ValueError('No content scraped')
 
-    return page.items[0].get('markdown')
+    markdowns = [item.get('markdown') for item in page.items]
+    return markdowns
+
+async def fetch_single_page(url):
+    return (await fetch_pages(urls=[url]))[0]
+
