@@ -1,15 +1,15 @@
-## Get the summary of latest news in song of your favorite genre
+# Turn a page into a song! 🎶🎸
 
-This actor allows you to listen to song with lyrics generated from articles from your favorite websites.
+This Actor scrapes content of a URL your provide, uses LLM to turn it into lyrics, and then generates a song from it.
 
 ## How does it work?
 
-1. You input link to specific article or to your favorite webpage with articles.
-2. The actor scrapes the articles and uses AI to generate concise summary of the articles.
-3. The actor uses the concise summary as lyrics for the generated song.
-4. Your song is generated. Download, listen!
+- Apify's [Website Content Crawler](https://apify.com/apify/website-content-crawler/input-schema) is used to scrape the URL.
+- OpenAI API is used to generate lyrics from the page content.
+- [TopMediai](https://www.topmediai.com/) is used to generate a song from the lyrics.
 
 ## Costs
-The costs of running this actor has to cover the APify platform costs and usage of third party AI-tools.
-Common costs will be around 0.15 USD per song if you do not have your own topmediai API token.
-You can reduce the costs to 0.05 USD per song if you use your own topmediai API token. Just paste it to the actor's input.
+
+You are charged per song generated. You can provide your own TopMedia AI API token to reduce the costs.
+
+Note: We're currently running on a limited TopMediai plan, so having the Actor cover the costs of song generation is not guaranteed.
