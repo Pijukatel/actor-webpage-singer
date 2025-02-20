@@ -16,7 +16,15 @@
             "description": "API key for https://www.topmediai.com/",
             "editor": "textfield",
             "prefill": ""
+        },
+        "song_genre": {
+            "title": "Song genre used to generate the song",
+            "type": "string",
+            "description": "Song genre used to generate the song",
+            "editor": "textfield",
+            "prefill": "Hip Hop"
         }
+
     },
     "required": ["url", "topmediai_api_key"]
 }
