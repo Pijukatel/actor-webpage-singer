@@ -16,11 +16,12 @@ Summarize the following text into a song-like structure.
  - Don't print headlines like "Verse 1".
 """
 
+
 async def generate_lyrics(content):
     chat_completion = await get_open_api_client().chat.completions.create(
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"{USER_PROMPT}\n\n```{content}```"}
+            {"role": "user", "content": f"{USER_PROMPT}\n\n```{content}```"},
         ],
         model="gpt-4o",
     )
