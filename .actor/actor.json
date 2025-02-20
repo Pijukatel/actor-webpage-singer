@@ -1,13 +1,16 @@
 {
 	"actorSpecification": 1,
-	"name": "text-summary-song",
-	"title": "Scrape single page in Python",
-	"description": "Scrape data from single page with provided URL.",
+	"name": "Sing-a-page",
+	"title": "Sing a page",
+	"description": "This actor allows you to listen to a song of your favorite genre with lyrics generated from a page you provide.",
 	"version": "0.0",
 	"buildTag": "latest",
 	"meta": {
 		"templateId": "python-start"
 	},
 	"input": "./input_schema.json",
-	"dockerfile": "./Dockerfile"
+	"dockerfile": "./Dockerfile",
+	"storages": {
+        "dataset": "./dataset_schema.json"
+    }
 }
