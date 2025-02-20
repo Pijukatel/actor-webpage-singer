@@ -9,7 +9,7 @@ You are a helpful, analytical assistant that can summarize text. You try to be n
 USER_PROMPT = """
 Summarize the following text into a song-like structure.
 
- - It should consist of several verses, each around 30 words, all of the roughly same length.
+ - It should consist of max 4 verses, each around 30 words, all of the roughly same length.
  - Don't rhyme it, unless the text is in English.
  - The text remains understandable, clear and factual.
  - Don't change the meaning, the story should stay as is.
