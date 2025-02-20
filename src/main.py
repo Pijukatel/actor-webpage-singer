@@ -26,7 +26,7 @@ async def main() -> None:
             "Fetching page content using AI", extra={"page_content": page_content}
         )
         lyrics = await generate_lyrics(page_content)
-        await kvs.set_value(key="lyrics", value=lyrics, content_type="plain/text")
+        await kvs.set_value(key="lyrics.txt", value=lyrics, content_type="plain/text")
 
         # Generate song.
         await Actor.set_status_message(
