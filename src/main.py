@@ -2,6 +2,9 @@ import os
 from apify import Actor
 from openai import OpenAI
 
+from src.music_generation import generate_song, get_song
+
+
 async def main() -> None:
     async with Actor:
         # Read inputs
@@ -52,4 +55,6 @@ Tam přemluvil kamarádku ke společné dovolené na Novém Zélandu a druhý de
 
         # Generate song.
 
-        # Push song to kvs
+        song_link = generate_song(lyrics=content, api_key = actor_input.get('topmediai_api_key'), genre= "Hip Hop")
+        kvs = await Actor.open_key_value_store()
+        kvs.set_value(key="generated_song", value=song_link)

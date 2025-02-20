@@ -9,7 +9,14 @@
             "description": "The URL of website you want to get the data from.",
             "editor": "textfield",
             "prefill": "https://www.apify.com/"
+        },
+        "topmediai_api_key": {
+            "title": "API key for https://www.topmediai.com/",
+            "type": "string",
+            "description": "API key for https://www.topmediai.com/",
+            "editor": "textfield",
+            "prefill": ""
         }
     },
-    "required": ["url"]
+    "required": ["url", "topmediai_api_key"]
 }
