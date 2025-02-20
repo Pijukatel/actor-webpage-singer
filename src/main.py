@@ -28,7 +28,7 @@ async def main() -> None:
         )
         lyrics = await generate_lyrics(page_content)
         song_genre = actor_input.get("song_genre") or await suggest_music_genre(page_content)
-        await kvs.set_value(key="lyrics.txt", value=lyrics, content_type="plain/text")
+        await kvs.set_value(key="lyrics.txt", value=lyrics, content_type="text/plain")
 
         # Generate song.
         await Actor.set_status_message(
