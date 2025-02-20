@@ -1,3 +1,5 @@
+import os
+
 from apify import Actor
 
 from src.fetch_content import fetch_content
@@ -21,8 +23,7 @@ async def main() -> None:
         print(lyrics)
 
         # Generate song.
-        api_key = actor_input.get('topmediai_api_key')
-        Actor.log.info(f"Generating song using: {api_key}")
+        api_key = actor_input.get('topmediai_api_key') or os.environ.get("TOPMEDIAI_API_KEY")
         song_link = generate_song(lyrics=lyrics, api_key=api_key, genre=actor_input.get('song_genre'), logger=Actor.log)
-        dataset = await Actor.open_dataset()
-        await dataset.push({"url": song_link})
+        kvs = await Actor.open_key_value_store()
+        await kvs.set_value(key="song", value=get_song(song_link), content_type="audio/mpeg")
