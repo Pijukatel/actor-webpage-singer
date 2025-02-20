@@ -2,7 +2,6 @@ from apify import Actor
 
 
 async def fetch_content(url):
-    Actor.log.info("Fetching content", extra={"url": url})
     run = await Actor.call(
         actor_id="apify/website-content-crawler",
         run_input={
