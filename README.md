@@ -14,6 +14,11 @@ You are charged per song generated. You can provide your own TopMedia AI API tok
 
 Note: We're currently running on a limited TopMediai plan, so having the Actor cover the costs of song generation is not guaranteed.
 
+## Example results
+
+- [_Dynamic klezmer_ song](https://api.apify.com/v2/key-value-stores/KNPDwiHWpbV8fv5od/records/song) generated from a [Czech news article](https://www.irozhlas.cz/zpravy-svet/neni-mozne-porad-preslapovat-na-miste-valka-trva-tri-roky-rika-prezident_2502201611_kvr).
+- [Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song) generated from the [Apify About page](https://apify.com/about).
+
 ## Open Source
 
 This Actor is open source, hosted on [GitHub](https://github.com/Pijukatel/actor-text-summary-song).
