@@ -14,6 +14,8 @@ You are charged per song generated. You can provide your own TopMedia AI API tok
 
 Note: We're currently running on a limited TopMediai plan, so having the Actor cover the costs of song generation is not guaranteed.
 
+There is also a small additional cost for scraping the URL using the Website Content Crawler, which depends on the page complexity (roughly $0.01-0.05).
+
 ## Example results
 
 - [_Dynamic klezmer_ song](https://api.apify.com/v2/key-value-stores/KNPDwiHWpbV8fv5od/records/song) generated from a [Czech news article](https://www.irozhlas.cz/zpravy-svet/neni-mozne-porad-preslapovat-na-miste-valka-trva-tri-roky-rika-prezident_2502201611_kvr).
