@@ -14,6 +14,7 @@ Summarize the following text into a song-like structure.
  - Stick to the original order of information.
  - Stick to the original language.
  - Don't print headlines like "Verse 1".
+ - Spell out numbers, as in never produce numerical symbols. Instead of 35, write thirty-five.
 """
 
 
