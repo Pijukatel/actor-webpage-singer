@@ -1,5 +1,7 @@
 # Turn a page into a song! 🎶🎸
 
+[![Webpage Singer](https://apify.com/actor-badge?actor=josef.prochazka/webpage-singer)](https://apify.com/josef.prochazka/webpage-singer)
+
 This Actor scrapes content of a URL your provide, uses LLM to turn it into lyrics, and then generates a song from it.
 
 ## How does it work?
