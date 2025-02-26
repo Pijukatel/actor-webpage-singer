@@ -1,4 +1,4 @@
-from src.open_ai_client import get_open_api_client
+from src.open_ai import get_open_api_client, OPENAI_MODEL
 
 SYSTEM_PROMPT = """
 You are a helpful, analytical assistant that can summarize text. You try to be non-biased and sticking to facts.
@@ -23,7 +23,7 @@ async def generate_lyrics(content):
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"{USER_PROMPT}\n\n```{content}```"},
         ],
-        model="gpt-4o",
+        model=OPENAI_MODEL,
     )
 
     return chat_completion.choices[0].message.content

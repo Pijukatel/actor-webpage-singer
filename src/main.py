@@ -3,8 +3,9 @@ import os
 from apify import Actor
 
 from src.fetch_content import fetch_content
-from src.music_generation import generate_song, get_song
+from src.music_generation import get_song, generate_song
 from src.lyrics_generation import generate_lyrics
+from src.open_ai import truncate_to_max_content_length
 from src.suggest_music_genre import suggest_music_genre
 
 
@@ -19,7 +20,7 @@ async def main() -> None:
             raise ValueError('Missing "url" attribute in input!')
         await Actor.set_status_message("Fetching page content")
         Actor.log.info("Fetching page content", extra={"url": url})
-        page_content = await fetch_content(url)
+        page_content = truncate_to_max_content_length(await fetch_content(url))
 
         # Generate song lyrics + determine genre.
         await Actor.set_status_message("Generating lyrics using AI")
