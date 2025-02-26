@@ -71,7 +71,9 @@ async def main() -> None:
                     value=get_song(song_link),
                     content_type="audio/mpeg",
                 )
-                await dataset.push_data({"url": song_link, "lyrics": lyrics})
+                await dataset.push_data(
+                    {"variant": variant, "url": song_link, "lyrics": lyrics}
+                )
         except Exception as e:
             await Actor.fail(
                 exception=e, status_message="Generating song using TopMediaAI failed."

@@ -8,7 +8,7 @@
             "type": "string",
             "description": "URL of the page that will be used to generate lyrics for the song.",
             "editor": "textfield",
-            "prefill": "https://www.apify.com/"
+            "prefill": "https://apify.com/about"
         },
         "topmediai_api_key": {
             "title": "API key for TopMediai",

@@ -5,12 +5,16 @@
       "title": "Overview",
       "transformation": {
         "fields": [
-          "url", "lyrics"
+          "variant", "url", "lyrics"
         ]
       },
       "display": {
         "component": "table",
         "properties": {
+          "variant": {
+            "label": "variant",
+            "format": "text"
+          },
           "url": {
             "label": "url",
             "format": "link"
