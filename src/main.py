@@ -74,7 +74,7 @@ async def main() -> None:
                 await dataset.push_data({"url": song_link, "lyrics": lyrics})
         except Exception as e:
             await Actor.fail(
-                exception=e, status_message="Generating lyrics using AI failed."
+                exception=e, status_message="Generating song using TopMediaAI failed."
             )
 
         # Charge user based on the resources used
