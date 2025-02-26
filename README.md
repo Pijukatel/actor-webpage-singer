@@ -7,7 +7,7 @@ Ever wondered what your favorite website would sound like as a song? **Webpage S
 ## How it works 🎤  
 
 1. **Scrape the webpage**. We grab the text from any URL you provide with Apify's [Website Content Crawler](https://apify.com/apify/website-content-crawler)
-2. **Generate the lyrics**. An AI rewrites the content into song lyrics.  
+2. **Generate the lyrics**. We use the OpenAI API to rewrite the content into song lyrics.  
 3. **Create the music**. The lyrics get turned into a full-blown song in your chosen genre using [TopMediai](https://www.topmediai.com/)
 
 ## Why use this? 🤔  
