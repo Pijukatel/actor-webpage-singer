@@ -20,8 +20,10 @@ There is also a small additional cost for scraping the URL using the Website Con
 
 ## Example results
 
-- [_Dynamic klezmer_ song](https://api.apify.com/v2/key-value-stores/KNPDwiHWpbV8fv5od/records/song) generated from a [Czech news article](https://www.irozhlas.cz/zpravy-svet/neni-mozne-porad-preslapovat-na-miste-valka-trva-tri-roky-rika-prezident_2502201611_kvr).
-- [Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song) generated from the [Apify About page](https://apify.com/about).
+Actor respects the language of the webpage and uses the same language for the song generation:
+
+- [_Dynamic klezmer_ song](https://api.apify.com/v2/key-value-stores/KNPDwiHWpbV8fv5od/records/song) generated from a [news article](https://www.irozhlas.cz/zpravy-svet/neni-mozne-porad-preslapovat-na-miste-valka-trva-tri-roky-rika-prezident_2502201611_kvr). (Czech)
+- [Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song) generated from the [Apify About page](https://apify.com/about). (English)
 
 ## Open Source
 
