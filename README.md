@@ -2,29 +2,48 @@
 
 [![Webpage Singer](https://apify.com/actor-badge?actor=josef.prochazka/webpage-singer)](https://apify.com/josef.prochazka/webpage-singer)
 
-This Actor scrapes content of a URL your provide, uses LLM to turn it into lyrics, and then generates a song from it.
+Ever wondered what your favorite website would sound like as a song? **Webpage Singer** takes any webpage, turns its content into lyrics, and transforms it into an actual track. Just drop in a URL and let the music happen.  
 
-## How does it work?
+## How it works 🎤  
 
-- Apify's [Website Content Crawler](https://apify.com/apify/website-content-crawler/input-schema) is used to scrape the URL.
-- OpenAI API is used to generate lyrics from the page content.
-- [TopMediai](https://www.topmediai.com/) is used to generate a song from the lyrics.
+1. **Scrape the webpage**. We grab the text from any URL you provide with Apify's [Website Content Crawler](https://apify.com/apify/website-content-crawler)
+2. **Generate the lyrics**. An AI rewrites the content into song lyrics.  
+3. **Create the music**. The lyrics get turned into a full-blown song in your chosen genre using [TopMediai](https://www.topmediai.com/)
 
-## Costs
+## Why use this? 🤔  
 
-You are charged per song generated. You can provide your own TopMedia AI API token to reduce the costs.
+- **For fun**. Turn your favorite website into a banger.  
+- **For creativity**. Get AI-generated lyrics and music for inspiration.  
+- **For pranks**. Surprise your friends with a song about their blog.  
+- **For memes**. Convert the latest viral post into a track.  
 
-Note: We're currently running on a limited TopMediai plan, so having the Actor cover the costs of song generation is not guaranteed.
+## What genres can it do? 🎸  
 
-There is also a small additional cost for scraping the URL using the Website Content Crawler, which depends on the page complexity (roughly $0.01-0.05).
+From pop to punk, rap to reggae, Webpage Singer can craft a song that fits the vibe you are going for. Just feed it a URL, pick your style, and let it do the magic.  
 
-## Example results
+## How much does it cost? 💰  
 
-Actor respects the language of the webpage and uses the same language for the song generation:
+- **Scraping the webpage**. A tiny fee of $0.01 to $0.05 depending on the page complexity.  
+- **Creating the song**. Each track has a cost, but you can bring your own **TopMediai API token** to keep it cheap.  
 
-- [_Dynamic klezmer_ song](https://api.apify.com/v2/key-value-stores/KNPDwiHWpbV8fv5od/records/song) generated from a [news article](https://www.irozhlas.cz/zpravy-svet/neni-mozne-porad-preslapovat-na-miste-valka-trva-tri-roky-rika-prezident_2502201611_kvr). (Czech)
-- [Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song) generated from the [Apify About page](https://apify.com/about). (English)
+## Listen to the magic 🎧  
 
-## Open Source
+Webpage Singer works in multiple languages, so if your page is in French, your song will be too. Check out these examples:  
 
-This Actor is open source, hosted on [GitHub](https://github.com/Pijukatel/actor-text-summary-song).
+🔥 **[Rock song](https://api.apify.com/v2/key-value-stores/kVjKLzHUsdRec3eli/records/song_variant_1)** – from an [Easy Lasagna recipe](https://www.allrecipes.com/recipe/12011/easy-lasagna-ii/)  
+
+🎸 **[Country song](https://api.apify.com/v2/key-value-stores/CcwRp1jXkfF5uL1XW/records/song_variant_1)** – based on the [Roswell Incident Wikipedia page](https://en.wikipedia.org/wiki/Roswell_incident)  
+
+🎤 **[Hip-hop anthem](https://api.apify.com/v2/key-value-stores/QASzABuO398SeY4TH/records/song_variant_1)** in Spanish about [Tottenham Hotspur website](https://www.tottenhamhotspur.com/)  
+
+🎻 **[Dynamic klezmer song](https://api.apify.com/v2/key-value-stores/Uxhvt2lQFzEkTD1mm/records/song_variant_1)** – from a [Czech news article](https://www.irozhlas.cz/zivotni-styl/vareni-jidlo/svetovy-den-barmanu-vlastne-mixologu-a-navic-jeden-nealko-koktejl_2502220900_dci)
+
+🎵 **[Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song)** – based on the [Apify about page](https://apify.com/about)  
+
+## Share your song 🎧  
+
+Made something amazing? Share your AI-generated banger on social media and tag us. We’d love to hear what the Webpage Singer comes up with!  
+
+## Open source  
+
+This Actor is open source, hosted on [GitHub](https://github.com/Pijukatel/actor-text-summary-song).  
