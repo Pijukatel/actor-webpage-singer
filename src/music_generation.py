@@ -4,9 +4,9 @@ import requests
 import json
 
 
-def generate_song(
+def generate_songs(
     lyrics: str, api_key: str, genre: str = "Hip Hop", logger=getLogger(__name__)
-) -> str:
+) -> [str]:
     """Generate song and return generated song link."""
     api_url = "https://api.topmediai.com/v1/music"
 
@@ -14,15 +14,12 @@ def generate_song(
     headers = {"x-api-key": api_key, "Content-Type": "application/json"}
 
     response = requests.request("POST", api_url, json=payload, headers=headers)
-    logger.info(response.text)
     if response.status_code != 200:
-        raise Exception(response.text)
+        raise RuntimeError(response.text)
 
     songs = json.loads(response.text)["data"]
 
-    return songs[0][
-        "audio_file"
-    ]  # It generates multiple song versions by default. Return just the first for now.
+    return [song["audio_file"] for song in songs]
 
 
 def get_song(link: str) -> bytes:

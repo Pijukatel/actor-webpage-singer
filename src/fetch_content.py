@@ -9,7 +9,7 @@ async def fetch_content(url):
             "maxCrawlPages": 1,
             "crawlerType": "playwright:firefox",
         },
-        memory_mbytes=4096, # Reduce memory so that it can run on free accounts.
+        memory_mbytes=4096,  # Reduce memory so that it can run on free accounts.
     )
 
     if run is None or run.status != "SUCCEEDED":
