@@ -21,7 +21,7 @@ Ever wondered what your favorite website would sound like as a song? **Webpage S
 
 From pop to punk, rap to reggae, Webpage Singer can craft a song that fits the vibe you are going for. Just feed it a URL, pick your style, and let it do the magic.
 
-If you don't enter a genre, the AI will suggest one based on the genre. It might surprise you with a genre you've never even heard of!
+If you don't enter a genre, the AI will suggest one based on the content of the web page. It might surprise you with a genre you've never even heard of!
 
 ## How much does it cost? 💰  
 
