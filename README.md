@@ -1,4 +1,4 @@
-# Turn a page into a song! 🎶🎸
+# Turn a webpage into a song! 🎶🎸
 
 [![Webpage Singer](https://apify.com/actor-badge?actor=josef.prochazka/webpage-singer)](https://apify.com/josef.prochazka/webpage-singer)
 
