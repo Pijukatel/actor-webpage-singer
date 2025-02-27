@@ -17,9 +17,22 @@ def generate_songs(
     if response.status_code != 200:
         raise RuntimeError(response.text)
 
-    songs = json.loads(response.text)["data"]
+    response_text = json.loads(response.text)
 
-    return [song["audio_file"] for song in songs]
+    if response_text.get("status", None) != 200:
+        raise RuntimeError(
+            f"TopMediai song generation temporarily out of order. Please try again later."
+            f" Details in response: {response.text}"
+        )
+
+    songs = [song["audio_file"] for song in response_text.get("data", [])]
+
+    if not songs:
+        raise RuntimeError(
+            "TopMediai song generation temporarily out of order. Please try again later."
+        )
+
+    return songs
 
 
 def get_song(link: str) -> bytes:
