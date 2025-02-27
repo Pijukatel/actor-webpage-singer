@@ -10,6 +10,8 @@ Ever wondered what your favorite website would sound like as a song? **Webpage S
 2. **Generate the lyrics**. We use the OpenAI API to rewrite the content into song lyrics.  
 3. **Create the music**. The lyrics get turned into a full-blown song in your chosen genre using [TopMediai](https://www.topmediai.com/)
 
+Just a small warning - it can take up to 5 minutes to generate a song, so be patient!
+
 ## Why use this? 🤔  
 
 - **For fun**. Turn your favorite website into a banger.  
@@ -25,8 +27,9 @@ If you don't enter a genre, the AI will suggest one based on the content of the 
 
 ## How much does it cost? 💰  
 
-- **Scraping the webpage**. A tiny fee of $0.01 to $0.05 depending on the page complexity.  
-- **Creating the song**. Each track has a cost, but you can bring your own **TopMediai API token** to keep it cheap.  
+- **Scraping the webpage**. A tiny fee of $0.01 to $0.05 depending on the page complexity.
+- **Creating the song**. Generating a full track costs $0.15 per song with pay-per-event pricing, or just $0.05 per song if you bring your own TopMediai API token.
+- **Try it for free!** The Actor is paid, but the $5 you get from Apify in your account is enough for ~30 songs. You can generate plenty of songs without a credit card.
 
 ## Listen to the magic 🎧  
 
@@ -40,11 +43,11 @@ Webpage Singer works in multiple languages, so if your page is in French, your s
 
 🎻 **[Dynamic klezmer song](https://api.apify.com/v2/key-value-stores/Uxhvt2lQFzEkTD1mm/records/song_variant_1)** – from a [Czech news article](https://www.irozhlas.cz/zivotni-styl/vareni-jidlo/svetovy-den-barmanu-vlastne-mixologu-a-navic-jeden-nealko-koktejl_2502220900_dci)
 
-🎵 **[Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song)** – based on the [Apify about page](https://apify.com/about)  
+🎵 **[Auto-genre song](https://api.apify.com/v2/key-value-stores/aXqrrXXCZT3yYUGdR/records/song)** – based on the [Apify homepage](https://apify.com/)  
 
 ## Share your song 🎧  
 
-Made something amazing? Share your AI-generated banger on social media and tag us. We’d love to hear what the Webpage Singer comes up with!  
+Made something amazing? Share your AI-generated banger on social media and tag us. We’d love to hear what Webpage Singer comes up with!  
 
 ## Open source  
 
