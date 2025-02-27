@@ -6,7 +6,7 @@
         "url": {
             "title": "Page URL",
             "type": "string",
-            "description": "URL of the page that will be used to generate lyrics for the song.",
+            "description": "Just enter the URL of a web page and it will be used to generate lyrics for the song.",
             "editor": "textfield",
             "prefill": "https://apify.com/about"
         },
@@ -14,13 +14,13 @@
             "title": "API key for TopMediai",
             "type": "string",
             "isSecret": true,
-            "description": "If provided, you will be charged less.",
+            "description": "If you provide your own TopMediai API key, you will be charged less.",
             "editor": "textfield"
         },
         "song_genre": {
             "title": "Song genre",
             "type": "string",
-            "description": "Song genre used to generate the song. If not provided, the AI will suggest one based on the page content.",
+            "description": "Song genre used to generate the song. If you don't provide a genre, the AI will suggest one based on the page content.",
             "editor": "textfield",
             "prefill": "Hip Hop"
         }
