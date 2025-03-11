@@ -7,7 +7,11 @@ async def fetch_content(url):
         run_input={
             "startUrls": [{"url": url}],
             "maxCrawlPages": 1,
-            "crawlerType": "playwright:firefox",
+            "crawlerType": "playwright:adaptive",
+            "proxyConfiguration": {
+                "useApifyProxy": True,
+                "apifyProxyGroups": ["RESIDENTIAL"],
+            },
         },
         memory_mbytes=4096,  # Reduce memory so that it can run on free accounts.
     )
