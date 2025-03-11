@@ -72,7 +72,7 @@ async def main() -> None:
                     content_type="audio/mpeg",
                 )
                 await dataset.push_data(
-                    {"variant": variant, "url": song_link, "lyrics": lyrics}
+                    {"variant": variant, "download url": song_link, "play url":  await kvs.get_public_url(f"song_variant_{variant}") ,"lyrics": lyrics}
                 )
         except Exception as e:
             await Actor.fail(

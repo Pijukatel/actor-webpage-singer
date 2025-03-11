@@ -5,7 +5,7 @@
       "title": "Overview",
       "transformation": {
         "fields": [
-          "variant", "url", "lyrics"
+          "variant", "download url", "play url", "lyrics"
         ]
       },
       "display": {
@@ -15,8 +15,12 @@
             "label": "variant",
             "format": "text"
           },
-          "url": {
-            "label": "url",
+          "play url": {
+            "label": "play url",
+            "format": "link"
+          },
+          "download url": {
+            "label": "download url",
             "format": "link"
           },
           "lyrics": {
