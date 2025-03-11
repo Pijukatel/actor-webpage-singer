@@ -1,8 +1,8 @@
 {
 	"actorSpecification": 1,
-	"name": "Sing-a-page",
-	"title": "Sing a page",
-	"description": "This actor allows you to listen to a song of your favorite genre with lyrics generated from a page you provide.",
+	"name": "webpage-singer",
+	"title": "Webpage Singer",
+	"description": "Ever wondered what a website would sound like as a song? This Actor takes any webpage, turns its content into lyrics, and transforms it into a track in your favorite genre. Just drop in a URL, pick a style, and let the AI do the rest.",
 	"version": "0.0",
 	"buildTag": "latest",
 	"meta": {
